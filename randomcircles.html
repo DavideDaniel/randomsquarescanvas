@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8">
+          <style type="text/css">
+          div {
+               display: block;
+               margin: 0 auto;
+          }
+
+          #canvas {
+               border-color: "black";
+               border-style: 1px, solid, "black";
+               display: block;
+               margin: 0 auto;
+          }
+          
+          button {
+               display: block;
+               margin: 0 auto;
+          }
+          </style>
+
+          
+          <title>Random circles</title>
+          
+     </head>
+     <body>
+          <div>
+          <canvas id="canvas" width="500" height="500"></canvas>
+          
+          <button id="start">Start</button>
+          </div>
+          <script type="text/javascript">
+
+          
+          
+          var draw = function() {
+          var canvas = document.getElementById('canvas');
+          var ctx = canvas.getContext('2d');
+          var rad = Math.floor(Math.random()*(400 - 1) + 1);
+          var x = Math.floor(Math.random()*(400 - 1) + 1);
+          var y = Math.floor(Math.random()*(400 - 1) + 1); 
+          ctx.fillStyle = "rgba(31, 117, 255, 0.65)";
+          ctx.beginPath();
+          ctx.moveTo(x,y);
+          ctx.arc(x, y, rad, 0, Math.PI*2, true);
+          ctx.fill();
+          }
+
+          var button = document.querySelector("#start");
+
+          start.addEventListener("click", function() {
+
+          setInterval(draw, 1000);
+
+          });
+          </script>
+     </body>
+</html>
