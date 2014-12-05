@@ -33,18 +33,20 @@
           </div>
           <script type="text/javascript">
 
-                    
+         
+          // ctx.clearRect(0, 0, canvas.width, canvas.height); 
           var draw = function() {
+          
           var canvas = document.getElementById('canvas');
           var ctx = canvas.getContext('2d');
-          var rad = Math.floor(Math.random()*(400 - 1) + 1);
+          var rad = Math.floor(Math.random()*(50 - 5));
           var x = Math.floor(Math.random()*(400 - 1) + 1);
           var y = Math.floor(Math.random()*(400 - 1) + 1); 
           // var randColor = Math.floor(Math.random()*255+1);
           var r = Math.floor(Math.random()*255+1);
           var g = Math.floor(Math.random()*255+1);
           var b = Math.floor(Math.random()*255+1);
-          ctx.fillStyle = "rgba("+r+", "+g+", "+b+", 0.35)";
+          ctx.fillStyle = "rgba("+r+", "+g+", "+b+", 0.25)";
           ctx.beginPath();
           ctx.moveTo(x,y);
           ctx.arc(x, y, rad, 0, Math.PI*2, true);
@@ -52,10 +54,10 @@
           }
 
           var button = document.querySelector("#start");
-
+          
           start.addEventListener("click", function() {
 
-          setInterval(draw, 1000);
+          setInterval(draw, 25);
 
           });
           </script>
